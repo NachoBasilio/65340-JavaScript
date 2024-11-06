@@ -103,23 +103,29 @@ function calcularPromedio(dni){
     alert("El promedio del alumno " + Alumnos[indexDelAlumno].nombre + " es: " + promedio)
 }
 
-function agregadoraDeAlumno(nombre, dni){
-    const ArrayDNI = crearArrayDeDNI()
+/**
+ * Agrega un nuevo alumno al sistema si su DNI no existe en el registro.
+ *
+ * @param {string} nombre - El nombre del alumno a agregar.
+ * @param {number} dni - El DNI del alumno a agregar.
+ * @returns {void}
+ */
+function agregadoraDeAlumno(nombre, dni) {
+    const ArrayDNI = crearArrayDeDNI();
 
-    let indexAlumno = ArrayDNI.indexOf(dni)
+    let indexAlumno = ArrayDNI.indexOf(dni);
 
-    if(indexAlumno === -1){
+    if (indexAlumno === -1) {
         Alumnos.push({
             nombre,
             dni,
             materias: []
-        })
-    }else{
-        alert("Ese alumno ya esta dentro de nuestro sistema")
+        });
+    } else {
+        alert("Ese alumno ya está dentro de nuestro sistema");
     }
-
-
 }
+
 
 function core(){
     let bandera = true
