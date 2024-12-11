@@ -61,7 +61,7 @@ function agregadoraDeEventos(){
     botonesArray.forEach(el => {
         el.addEventListener("click", (event) => {
             Equipo.push(event.target.parentElement.children[0].children[1].innerText)
-            console.log("Funciono")
+
             actualizarEquipo()
         })
     })
@@ -70,7 +70,7 @@ function agregadoraDeEventos(){
 async function agregadoraDeEventosX(){
     const botones = document.getElementsByClassName("botonEliminar")
     const botonesArray = Array.from(botones)
-    console.log(botonesArray)
+
     botonesArray.forEach(el => {
         el.addEventListener("click", async (event) => {
             Equipo = Equipo.filter(el => el != event.target.parentElement.children[0].children[1].innerText)
