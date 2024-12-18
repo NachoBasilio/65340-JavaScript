@@ -22,17 +22,18 @@ FormularioPokemon.addEventListener("submit", async (event)=>{
     agregadoraDeEventos()
 })
 
-function pintarUnPokemonEnPantalla(pokemon){
+function pintarUnPokemonEnPantalla({name, id, sprites, abilities}){
+    // const {name, id, sprites, abilities} = pokemon
     PokemonList.innerHTML += `
         <div class="pokemon-card">
             <div class="titulo">
-                <h2 class="nombre">${pokemon.name}</h2>
-                <h2 class="numero">${pokemon.id}</h2>
+                <h2 class="nombre">${name}</h2>
+                <h2 class="numero">${id}</h2>
             </div>
             <div class="imagen" >
-                <img src="${pokemon.sprites.front_default}" alt="">
+                <img src="${sprites.front_default}" alt="">
             </div>
-            <p>${pokemon.abilities[0].ability.name}</p><p>${pokemon?.abilities[1]?.ability.name || ""}</p>
+            <p>${abilities[0].ability.name}</p><p>${abilities[1]?.ability.name || ""}</p>
             <button class="botonAgregar">Agregar</button>
         </div>
     `

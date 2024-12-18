@@ -1,8 +1,9 @@
 document.getElementById("icono-carrito").addEventListener("click", ()=>{
-    document.getElementById("carrito-contenedor").classList.toggle("on")
+    document.getElementById("carrito-contenedor").classList.add("on")
 })
+
 document.getElementById("boton-cerrar").addEventListener("click", ()=>{
-    document.getElementById("carrito-contenedor").classList.toggle("on")
+    document.getElementById("carrito-contenedor").classList.remove("on")
 })
 
 let Carrito = JSON.parse(localStorage.getItem("carrito")) || []
